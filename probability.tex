@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{Probabilities and Distributions}
+\author{Tyreek Alexander}
+\date{}
+\maketitle
+\section*{Common Probability Distributions}
+
+\subsection*{Binomial Distribution}
+The probability of getting exactly \( k \) successes in \( n \) independent Bernoulli trials is given by the binomial distribution:
+\[
+P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+\]
+where \( p \) is the probability of success on a single trial.
+
+\textbf{Common Uses:}
+\begin{itemize}
+    \item Modeling the number of successes in a fixed number of trials.
+    \item Quality control and reliability testing.
+\end{itemize}
+
+\textbf{Maximum Likelihood Estimation (MLE):}
+\[
+\hat{p} = \frac{k}{n}
+\]
+
+\textbf{Mean and Variance:}
+\[
+\text{Mean} = np, \quad \text{Variance} = np(1-p)
+\]
+
+\subsection*{Normal Distribution}
+The probability density function of a normal distribution with mean \( \mu \) and standard deviation \( \sigma \) is:
+\[
+f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+\]
+
+\textbf{Common Uses:}
+\begin{itemize}
+    \item Modeling natural phenomena (e.g., heights, test scores).
+    \item Assumption in many statistical methods.
+\end{itemize}
+
+\textbf{Maximum Likelihood Estimation (MLE):}
+\[
+\hat{\mu} = \frac{1}{n} \sum_{i=1}^{n} x_i, \quad \hat{\sigma}^2 = \frac{1}{n} \sum_{i=1}^{n} (x_i - \hat{\mu})^2
+\]
+
+\textbf{Mean and Variance:}
+\[
+\text{Mean} = \mu, \quad \text{Variance} = \sigma^2
+\]
+
+\subsection*{Poisson Distribution}
+The probability of observing \( k \) events in a fixed interval of time or space is given by the Poisson distribution:
+\[
+P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
+\]
+where \( \lambda \) is the average number of events per interval.
+
+\textbf{Common Uses:}
+\begin{itemize}
+    \item Modeling the number of events in a fixed interval of time or space.
+    \item Queueing theory and telecommunications.
+\end{itemize}
+
+\textbf{Maximum Likelihood Estimation (MLE):}
+\[
+\hat{\lambda} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\]
+
+\textbf{Mean and Variance:}
+\[
+\text{Mean} = \lambda, \quad \text{Variance} = \lambda
+\]
+
+\end{document}
