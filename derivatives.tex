@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{Derivative rules and properties}
+\author{}
+\date{}
+
+\begin{document}
+\author{Tyreek Alexander}
+
+\maketitle
+
+\section*{Basic derivative rules}
+
+\begin{itemize}
+    \item \textbf{Power rule:} \(\frac{d}{dx} x^n = nx^{n-1}\)
+    \item \textbf{Constant rule:} \(\frac{d}{dx} c = 0\) where \(c\) is a constant
+    \item \textbf{Constant multiple rule:} \(\frac{d}{dx} [cf(x)] = c \frac{d}{dx} f(x)\)
+    \item \textbf{Sum rule:} \(\frac{d}{dx} [f(x) + g(x)] = \frac{d}{dx} f(x) + \frac{d}{dx} g(x)\)
+    \item \textbf{Difference rule:} \(\frac{d}{dx} [f(x) - g(x)] = \frac{d}{dx} f(x) - \frac{d}{dx} g(x)\)
+\end{itemize}
+
+\section*{Product, quotient and chain rules}
+
+\begin{itemize}
+    \item \textbf{Product rule:} \(\frac{d}{dx} [f(x)g(x)] = f(x) \frac{d}{dx} g(x) + g(x) \frac{d}{dx} f(x)\)
+    \item \textbf{Quotient rule:} \(\frac{d}{dx} \left[ \frac{f(x)}{g(x)} \right] = \frac{g(x) \frac{d}{dx} f(x) - f(x) \frac{d}{dx} g(x)}{[g(x)]^2}\)
+    \item \textbf{Chain rule:} \(\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)\)
+\end{itemize}
+
+\section*{Common derivatives}
+
+\begin{itemize}
+    \item \(\frac{d}{dx} e^x = e^x\)
+    \item \(\frac{d}{dx} a^x = a^x \ln(a)\) where \(a > 0\) and \(a \neq 1\)
+    \item \(\frac{d}{dx} e^{u(x)} = e^{u(x)} \cdot u'(x)\)
+    \item \(\frac{d}{dx} a^{u(x)} = a^{u(x)} \ln(a) \cdot u'(x)\)
+    \item \(\frac{d}{dx} \ln(x) = \frac{1}{x}\)
+    \item \(\frac{d}{dx} \log_a(x) = \frac{1}{x \ln(a)}\) where \(a > 0\) and \(a \neq 1\)
+    \item \(\frac{d}{dx} \ln(u(x)) = \frac{u'(x)}{u(x)}\)
+    \item \(\frac{d}{dx} \log_a(u(x)) = \frac{u'(x)}{u(x) \ln(a)}\) where \(a > 0\) and \(a \neq 1\)
+\end{itemize}
+
+\end{document}

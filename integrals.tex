@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Integral rules and formulas}
+\author{Tyreek Alexander}
+\date{}
+\maketitle
+
+\section*{Basic integral rules}
+\begin{itemize}
+    \item \textbf{Power rule} \(\int x^n \, dx = \frac{x^{n+1}}{n+1} + C \quad \text{for } n \neq -1\)
+    \item \textbf{Constant multiple rule} \(\int a \cdot f(x) \, dx = a \int f(x) \, dx\)
+    \item \textbf{Sum rule} \(\int [f(x) + g(x)] \, dx = \int f(x) \, dx + \int g(x) \, dx\)
+    \item \textbf{Difference rule} \(\int [f(x) - g(x)] \, dx = \int f(x) \, dx - \int g(x) \, dx\)
+\end{itemize}
+
+\section*{Common integrals}
+\begin{itemize}
+    \item \(\int e^x \, dx = e^x + C\)
+    \item \(\int a^x \, dx = \frac{a^x}{\ln(a)} + C \quad \text{for } a > 0 \text{ and } a \neq 1\)
+    \item \(\int e^{u(x)} u'(x) \, dx = e^{u(x)} + C\) (by substitution)
+    \item \(\int a^{u(x)} \ln(a) u'(x) \, dx = \frac{a^{u(x)}}{\ln(a)} + C \quad \text{for } a > 0 \text{ and } a \neq 1\) (by substitution)
+    \item \(\int \ln(x) \, dx = x \ln(x) - x + C\)
+    \item \(\int \log_a(x) \, dx = \frac{x \log_a(x)}{\ln(a)} - \frac{x}{\ln(a)} + C \quad \text{for } a > 0 \text{ and } a \neq 1\)
+    \item \(\int \frac{1}{x} \, dx = \ln|x| + C\)
+\end{itemize}
+
+\section*{Solving methods}
+
+\subsection*{Change of variables (substitution)}
+If \( u = g(x) \), then
+\[
+\int f(g(x)) g'(x) \, dx = \int f(u) \, du
+\]
+
+\subsection*{Integration by parts}
+\[
+\int u \, dv = uv - \int v \, du
+\]
+where \( u \) and \( dv \) are continuously differentiable functions of \( x \).
+
+\end{document}

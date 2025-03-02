@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{Vector Operations}
+\author{Tyreek Alexander}
+\date{}
+\maketitle
+
+\section*{Definition}
+
+\subsection*{Vectors}
+A vector is an ordered list of numbers:
+\[
+\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix}
+\]
+
+\section*{Common vector operations}
+
+\subsection*{Addition of vectors}
+The sum of two vectors \(\mathbf{u}\) and \(\mathbf{v}\) is given by:
+\[
+\mathbf{u} + \mathbf{v} = \begin{bmatrix} u_1 \\ u_2 \\ \vdots \\ u_n \end{bmatrix} + \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n \end{bmatrix}
+\]
+
+\subsection*{Scalar multiplication}
+The product of a scalar \(c\) and a vector \(\mathbf{v}\) is given by:
+\[
+c \mathbf{v} = c \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} = \begin{bmatrix} c v_1 \\ c v_2 \\ \vdots \\ c v_n \end{bmatrix}
+\]
+
+\subsection*{Vector norm}
+The norm of a vector \(\mathbf{v}\) is given by:
+\[
+\|\mathbf{v}\| = \sqrt{v_1^2 + v_2^2 + \cdots + v_n^2}
+\]
+
+\subsection*{\(L^p\) norm}
+The \(L^p\) norm of a vector \(\mathbf{v}\) is given by:
+\[
+\|\mathbf{v}\|_p = \left( \sum_{i=1}^n |v_i|^p \right)^{\frac{1}{p}}
+\]
+
+\subsection*{Dot product}
+The dot product of two vectors \(\mathbf{u}\) and \(\mathbf{v}\) is given by:
+\[
+\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^n u_i v_i = \|\mathbf{u}\| \|\mathbf{v}\| \cos \theta
+\]
+
+\subsection*{Cross product}
+The cross product of two vectors \(\mathbf{u}\) and \(\mathbf{v}\) in \(\mathbb{R}^3\) is given by:
+\[
+\mathbf{u} \times \mathbf{v} = \begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3
+\end{vmatrix}
+\]
+
+\subsection*{Vector calculus}
+\subsubsection*{Gradient}
+The gradient of a scalar function \(f(x, y, z)\) is given by:
+\[
+\nabla f = \begin{bmatrix}
+\frac{\partial f}{\partial x} \\
+\frac{\partial f}{\partial y} \\
+\frac{\partial f}{\partial z}
+\end{bmatrix}
+\]
+
+\subsubsection*{Divergence}
+The divergence of a vector field \(\mathbf{F} = \begin{bmatrix} F_1 \\ F_2 \\ F_3 \end{bmatrix}\) is given by:
+\[
+\nabla \cdot \mathbf{F} = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z}
+\]
+
+\subsubsection*{Curl}
+The curl of a vector field \(\mathbf{F} = \begin{bmatrix} F_1 \\ F_2 \\ F_3 \end{bmatrix}\) is given by:
+\[
+\nabla \times \mathbf{F} = \begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+F_1 & F_2 & F_3
+\end{vmatrix}
+\]
+\section*{Properties}
+\subsection*{Properties of Vector Operations}
+\begin{itemize}
+    \item \textbf{Commutativity of Addition}:
+    \(\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}\)
+
+    \item \textbf{Associativity of Addition}:
+    \((\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})\)
+
+    \item \textbf{Distributivity of Scalar Multiplication}:
+    \(c (\mathbf{u} + \mathbf{v}) = c \mathbf{u} + c \mathbf{v}\)
+
+    \item \textbf{Associativity of Scalar Multiplication}:
+    \(c (d \mathbf{v}) = (cd) \mathbf{v}\)
+
+    \item \textbf{Identity Element of Addition}:
+    \(\mathbf{v} + \mathbf{0} = \mathbf{v}\)
+
+    \item \textbf{Inverse Element of Addition}:
+    \(\mathbf{v} + (-\mathbf{v}) = \mathbf{0}\)
+
+    \item \textbf{Identity Element of Scalar Multiplication}:
+    \(1 \mathbf{v} = \mathbf{v}\)
+
+    \item \textbf{Distributivity of Scalar Multiplication over Addition}:
+    \(c (\mathbf{u} + \mathbf{v}) = c \mathbf{u} + c \mathbf{v}\)
+
+    \item \textbf{Distributivity of Scalar Multiplication over Vector Addition}:
+    \((c + d) \mathbf{v} = c \mathbf{v} + d \mathbf{v}\)
+\end{itemize}
+
+\end{document}
