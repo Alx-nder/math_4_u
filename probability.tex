@@ -2,81 +2,30 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage[a4paper,landscape,margin=0.3in]{geometry}
+
 
 \begin{document}
 
-\title{Probabilities and Distributions}
-\author{Tyreek Alexander}
-\date{}
-\maketitle
-\section*{Common Probability Distributions}
+\begin{tabular}{c c c c c c c}
+\hline
+Distribtion & pdf & mean & variance & MLE for $\theta$ & Likelihood & Bayes estimator for $\theta$\\
+\hline
+Normal($\mu, \sigma$) & $\frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$ & $\mu$ & $\sigma^2$ & $\hat{\mu} = \bar{x}, \hat{\sigma}^2 = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^2$ & $\left(\frac{1}{\sqrt{2\pi\sigma^2}}\right)^n e^{-\frac{1}{2\sigma^2}\sum_{i=1}^n (x_i-\mu)^2}$ & $\frac{n\bar{x} + \mu_0}{n+1}$ \\
 
-\subsection*{Binomial Distribution}
-The probability of getting exactly \( k \) successes in \( n \) independent Bernoulli trials is given by the binomial distribution:
-\[
-P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
-\]
-where \( p \) is the probability of success on a single trial.
+Exponential & $\lambda e^{-\lambda x}$ & $\frac{1}{\lambda}$ & $\frac{1}{\lambda^2}$ & $\hat{\lambda} = \frac{1}{\bar{x}}$ & $\lambda^n e^{-\lambda \sum_{i=1}^n x_i}$ & $\frac{n}{n+1}\bar{x}$ \\
 
-\textbf{Common Uses:}
-\begin{itemize}
-    \item Modeling the number of successes in a fixed number of trials.
-    \item Quality control and reliability testing.
-\end{itemize}
+Uniform & $\frac{1}{b-a}$ & $\frac{a+b}{2}$ & $\frac{(b-a)^2}{12}$ & $\hat{a} = \min(x_i), \hat{b} = \max(x_i)$ & $\left(\frac{1}{b-a}\right)^n$ & $\frac{a+b}{2}$ \\
 
-\textbf{Maximum Likelihood Estimation (MLE):}
-\[
-\hat{p} = \frac{k}{n}
-\]
+Gamma($\alpha, \beta$) & $\frac{\beta^\alpha x^{\alpha-1}e^{-\beta x}}{\Gamma(\alpha)}$ & $\frac{\alpha}{\beta}$ & $\frac{\alpha}{\beta^2}$ & $\hat{\beta} = \frac{\alpha}{\bar{x}}$ & $\left(\frac{\beta^\alpha}{\Gamma(\alpha)}\right)^n \prod_{i=1}^n x_i^{\alpha-1} e^{-\beta x_i}$ & $\frac{\alpha + n\bar{x}}{\beta + n}$ \\
 
-\textbf{Mean and Variance:}
-\[
-\text{Mean} = np, \quad \text{Variance} = np(1-p)
-\]
+Inverse Gamma($\alpha, \beta$) & $\frac{\beta^\alpha}{\Gamma(\alpha)} x^{-\alpha-1} e^{-\frac{\beta}{x}}$ & $\frac{\beta}{\alpha-1}$ for $\alpha > 1$ & $\frac{\beta^2}{(\alpha-1)^2(\alpha-2)}$ for $\alpha > 2$ & $\hat{\beta} = \frac{\alpha}{\bar{x}}$ & $\left(\frac{\beta^\alpha}{\Gamma(\alpha)}\right)^n \prod_{i=1}^n x_i^{-\alpha-1} e^{-\frac{\beta}{x_i}}$ & $\frac{\beta + \sum_{i=1}^n \frac{1}{x_i}}{\alpha + n + 1}$ \\
 
-\subsection*{Normal Distribution}
-The probability density function of a normal distribution with mean \( \mu \) and standard deviation \( \sigma \) is:
-\[
-f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
-\]
+Weibull($\lambda, k$) & $\frac{k}{\lambda} \left(\frac{x}{\lambda}\right)^{k-1} e^{-(x/\lambda)^k}$ & $\lambda \Gamma(1 + \frac{1}{k})$ & $\lambda^2 \left[\Gamma(1 + \frac{2}{k}) - \Gamma^2(1 + \frac{1}{k})\right]$ & $\hat{\lambda} = \left(\frac{\sum_{i=1}^n x_i^k}{n}\right)^{1/k}$ & $\left(\frac{k}{\lambda}\right)^n \prod_{i=1}^n \left(\frac{x_i}{\lambda}\right)^{k-1} e^{-(x_i/\lambda)^k}$ & $\lambda \left(\frac{\sum_{i=1}^n x_i^k}{n}\right)^{1/k}$ \\
 
-\textbf{Common Uses:}
-\begin{itemize}
-    \item Modeling natural phenomena (e.g., heights, test scores).
-    \item Assumption in many statistical methods.
-\end{itemize}
+Poisson($\lambda$) & $\frac{e^{-\lambda}\lambda^x}{x!}$ & $\lambda$ & $\lambda$ & $\hat{\lambda} = \bar{x}$ & $\left(\frac{e^{-\lambda}\lambda^{x_i}}{x_i!}\right)^n$ & $\frac{n\bar{x} + \lambda_0}{n+1}$ \\
 
-\textbf{Maximum Likelihood Estimation (MLE):}
-\[
-\hat{\mu} = \frac{1}{n} \sum_{i=1}^{n} x_i, \quad \hat{\sigma}^2 = \frac{1}{n} \sum_{i=1}^{n} (x_i - \hat{\mu})^2
-\]
 
-\textbf{Mean and Variance:}
-\[
-\text{Mean} = \mu, \quad \text{Variance} = \sigma^2
-\]
-
-\subsection*{Poisson Distribution}
-The probability of observing \( k \) events in a fixed interval of time or space is given by the Poisson distribution:
-\[
-P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
-\]
-where \( \lambda \) is the average number of events per interval.
-
-\textbf{Common Uses:}
-\begin{itemize}
-    \item Modeling the number of events in a fixed interval of time or space.
-    \item Queueing theory and telecommunications.
-\end{itemize}
-
-\textbf{Maximum Likelihood Estimation (MLE):}
-\[
-\hat{\lambda} = \frac{1}{n} \sum_{i=1}^{n} x_i
-\]
-
-\textbf{Mean and Variance:}
-\[
-\text{Mean} = \lambda, \quad \text{Variance} = \lambda
-\]
-
+\hline
+\end{tabular}
 \end{document}
